@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: Game
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -119,10 +119,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 880, y: 492}
-  m_MaxSize: {x: 16005, y: 14042}
+  m_MinSize: {x: 881, y: 492}
+  m_MaxSize: {x: 16006, y: 14042}
   vertical: 0
-  controlID: 154
+  controlID: 16
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 492}
   m_MaxSize: {x: 12005, y: 14042}
   vertical: 1
-  controlID: 70
+  controlID: 17
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 71
+  controlID: 18
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -193,8 +193,8 @@ MonoBehaviour:
     y: 0
     width: 242
     height: 676
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -219,8 +219,8 @@ MonoBehaviour:
     y: 0
     width: 632
     height: 676
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -247,8 +247,8 @@ MonoBehaviour:
     y: 0
     width: 655
     height: 676
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -430,7 +430,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: ea380000
       m_LastClickedID: 14570
-      m_ExpandedIDs: 32fbffff90380000d23800007039000082390000
+      m_ExpandedIDs: d03bfcff10a5fdffb835feff32fbffff903800007039000082390000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -491,9 +491,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -10.433266, y: -3.5476437, z: -11.745741}
+    m_Target: {x: 6.7420626, y: 2.7043526, z: 1.6409409}
     speed: 2
-    m_Value: {x: -10.433266, y: -3.5476437, z: -11.745741}
+    m_Value: {x: 6.7420626, y: 2.7043526, z: 1.6409409}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -540,13 +540,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.1328223, y: 0.85527706, z: -0.2687993, w: -0.42268583}
+    m_Target: {x: -0.17548415, y: 0.7983071, z: -0.27747375, w: -0.5049655}
     speed: 2
-    m_Value: {x: -0.13281852, y: 0.8552527, z: -0.26879165, w: -0.4226738}
+    m_Value: {x: -0.17547795, y: 0.7982789, z: -0.27746394, w: -0.50494766}
   m_Size:
-    m_Target: 20.363213
+    m_Target: 3.6521034
     speed: 2
-    m_Value: 20.363213
+    m_Value: 3.6521034
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -700,21 +700,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Particles/Weapons
+    - Assets/Weapons/SSG
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Particles/Weapons
+  - Assets/Weapons/SSG
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Reaper\Desktop\QAP\unity\FPS
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: cc490000
-    m_LastClickedID: 18892
-    m_ExpandedIDs: 000000007a3a0000943a0000c849000000ca9a3b
+    m_SelectedIDs: b4890000
+    m_LastClickedID: 35252
+    m_ExpandedIDs: 00000000863a00009a3a0000a23a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -742,7 +742,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007a3a0000
+    m_ExpandedIDs: 00000000863a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -852,7 +852,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 14712
+  m_LastSelectedObjectID: 14570
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52

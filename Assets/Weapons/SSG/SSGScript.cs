@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class SSGScript : MonoBehaviour
 {
@@ -6,9 +7,7 @@ public class SSGScript : MonoBehaviour
     public float range = 3000f;
     public float fireRate = 1f;
     public int pellets = 20;
-    public float horizontalSpread = 0.5f;
-    public float verticalSpread = 2f;
-    public float spreadThightness = 0.03f;
+    public float spreadAngle = 10f;
 
     public Camera fpsCam;
 
@@ -16,8 +15,9 @@ public class SSGScript : MonoBehaviour
     public float muzzleFlashTimer = 0.1f;
     private float muzzleFlashTimerStart;
     public bool muzzleFlashEnabled = false;
-    
+
     public GameObject impactEffect;
+    public GameObject bulletHoleImg;
     private Animator animator;
 
     private AudioSource audioSource;
@@ -37,10 +37,7 @@ public class SSGScript : MonoBehaviour
         {
             audioSource.Play();
             nextTimeToFire = Time.time + 1f / fireRate;
-            for (int i = 0; i < pellets; i++)
-            {
-                Shoot();
-            }
+            Shoot();
         }
 
         if (muzzleFlashEnabled == true)
@@ -61,32 +58,35 @@ public class SSGScript : MonoBehaviour
 
     void Shoot()
     {
-        RaycastHit hit;
         muzzleFlashEnabled = true;
 
-        Vector3 spread = new Vector3(0,0,0);
-        spread += fpsCam.transform.up * Random.Range(-horizontalSpread, horizontalSpread);
-        spread += fpsCam.transform.right * Random.Range(-verticalSpread, verticalSpread);
-
-        fpsCam.transform.forward += spread.normalized * Random.Range(0f, spreadThightness);
-
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
-        { 
-            Target target = hit.transform.GetComponent<Target>();
-
-            Debug.DrawLine(fpsCam.transform.position, hit.point, Color.green);
-
-            if (target != null)
-            {
-                target.TakeDamage(damage);
-            }
-
-            GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactGO, 2f);
-        }
-        else
+        for (int i = 0; i < pellets; i++)
         {
-            Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward, Color.red, 3000f);
+            RaycastHit hit;
+
+            Quaternion fireRotation = Quaternion.LookRotation(fpsCam.transform.forward);
+
+            Quaternion randomRotation = Random.rotation;
+
+            fireRotation = Quaternion.RotateTowards(fireRotation, randomRotation, Random.Range(0.0f, spreadAngle));
+
+            if (Physics.Raycast(fpsCam.transform.position, fireRotation * Vector3.forward, out hit, range))
+            {
+                Target target = hit.transform.GetComponent<Target>();
+
+                if (target != null)
+                {
+                    target.TakeDamage(damage);
+                }
+
+                hit.point = new Vector3(hit.point.x + 0.001f, hit.point.y + 0.001f, hit.point.z + 0.001f);
+
+                GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                GameObject bulletHole = Instantiate(bulletHoleImg, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(impactGO, 2f);
+                Destroy(bulletHole, 30f);
+            }
         }
-    }
+     }
+    
 }
